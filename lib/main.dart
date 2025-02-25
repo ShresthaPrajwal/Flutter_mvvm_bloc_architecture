@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         routerConfig: router,
         title: 'Moco_app',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        ),
+        // theme: ThemeData(
+        //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // ),
       ),
     );
   }
