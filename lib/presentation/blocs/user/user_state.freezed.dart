@@ -311,6 +311,8 @@ abstract class _$$UserLoadedImplCopyWith<$Res> {
   ) = __$$UserLoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserModel user});
+
+  $UserModelCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -326,16 +328,26 @@ class __$$UserLoadedImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? user = freezed}) {
+  $Res call({Object? user = null}) {
     return _then(
       _$UserLoadedImpl(
         user:
-            freezed == user
+            null == user
                 ? _value.user
                 : user // ignore: cast_nullable_to_non_nullable
                     as UserModel,
       ),
     );
+  }
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res> get user {
+    return $UserModelCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -357,12 +369,11 @@ class _$UserLoadedImpl implements UserLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLoadedImpl &&
-            const DeepCollectionEquality().equals(other.user, user));
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+  int get hashCode => Object.hash(runtimeType, user);
 
   /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
