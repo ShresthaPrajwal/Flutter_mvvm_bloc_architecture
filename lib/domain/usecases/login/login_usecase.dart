@@ -1,4 +1,4 @@
-import 'package:moco_app/domain/model/user/user_model.dart';
+import 'package:moco_app/domain/entities/user/user_model.dart';
 import 'package:moco_app/domain/repositories/auth/auth_repository.dart';
 
 class LoginUsecase {

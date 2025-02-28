@@ -1,6 +1,6 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:moco_app/domain/model/user/user_model.dart';
+import 'package:moco_app/domain/entities/user/user_model.dart';
 
 part 'login_state.freezed.dart';
 

@@ -8,9 +8,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   LoginBloc(this.loginUseCase) : super(LoginInitial()) {
     on<LoginButtonPressed>(_onLoginButtonPressed);
-    print(
-      "loginUsecase Instance From LoginBloc Constructor ${loginUseCase.hashCode}",
-    );
   }
 
   void _onLoginButtonPressed(
