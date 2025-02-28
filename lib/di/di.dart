@@ -12,7 +12,7 @@ void setupDependencies() {
 
   // Data Sources
   getIt.registerSingleton<LoginDataSource>(
-    LoginDataSource(dioClient: getIt<DioClient>().dio),
+    LoginDataSource(dioClient: getIt<DioClient>()),
   );
 
   // Repositories
@@ -27,4 +27,23 @@ void setupDependencies() {
 
   // BLoCs
   getIt.registerFactory<LoginBloc>(() => LoginBloc(getIt<LoginUsecase>()));
+
+
+  /* To check weather the same instances above are used properly. */
+
+  // print(
+  //   'DioClient Instance From GetIt, ${getIt.get(type: DioClient).hashCode}',
+  // );
+  // print(
+  //   'LoginDataSource Instance From GetIt, ${getIt.get(type: LoginDataSource).hashCode}',
+  // );
+  // print(
+  //   'AuthRepositoryImpl Instance From GetIt, ${getIt.get(type: AuthRepositoryImpl).hashCode}',
+  // );
+  // print(
+  //   'LoginUseCase Instance From GetIt, ${getIt.get(type: LoginUsecase).hashCode}',
+  // );
+  // print(
+  //   'LoginBloc Instance From GetIt, ${getIt.get(type: LoginBloc).hashCode}',
+  // );
 }
