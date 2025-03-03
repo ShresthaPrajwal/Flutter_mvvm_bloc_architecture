@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moco_app/presentation/widgets/bezier_clipper.dart/bezier_clipper.dart';
 
 class BackgroundWidget extends StatelessWidget {
   const BackgroundWidget({super.key});
@@ -13,10 +14,10 @@ class BackgroundWidget extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color.fromARGB(255, 255, 255, 255), 
+                Color.fromARGB(255, 255, 255, 255),
                 Color.fromARGB(255, 16, 83, 170),
               ],
-              stops: [0.0, 1.0], 
+              stops: [0.0, 1.0],
             ),
           ),
         ),
@@ -24,13 +25,13 @@ class BackgroundWidget extends StatelessWidget {
           top: 0,
           left: 0,
           right: 0,
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.4,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 28, 45, 73),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(60),
-                bottomRight: Radius.circular(60),
+          child: ClipPath(
+            clipper: BezierClipper(),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.35,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(255, 28, 45, 73),
               ),
             ),
           ),
