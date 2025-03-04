@@ -5,8 +5,8 @@ class LoginEvent with _$LoginEvent {
   const factory LoginEvent.loginButtonPressed({
     required String id,
     required String mpin,
-    required String platform,
-    required String pushToken,
-    required String model
+    // required String platform,
+    // required String pushToken,
+    // required String model
   }) = LoginButtonPressed;
 }

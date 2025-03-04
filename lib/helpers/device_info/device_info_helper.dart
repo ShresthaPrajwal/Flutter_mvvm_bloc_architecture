@@ -19,4 +19,15 @@ class DeviceInfoHelper {
       return 'Error retrieving device ID: $e';
     }
   }
+
+  Future<String?> getDeviceModel() async {
+    if (Platform.isAndroid) {
+      AndroidDeviceInfo androidInfo = await _deviceInfoPlugin.androidInfo;
+      return androidInfo.model;
+    } else if (Platform.isIOS) {
+      IosDeviceInfo iosInfo = await _deviceInfoPlugin.iosInfo;
+      return iosInfo.model;
+    }
+    return null;
+  }
 }

@@ -149,10 +149,10 @@ class LoginForm extends StatelessWidget {
                 LoginButtonPressed(
                   id: emailController.text,
                   mpin: passwordController.text,
-                  platform: 'android',
-                  pushToken:
-                      'erSBsrPKSuSbazOD8BkRoe:APA91bEygGD3xElnRimDvJKZgeXtzT8TLMAWpNhL3vnf8-Db0bNLNxlJpWpq7iRKApLamllUr7bY9kriO0ARh1-lPEV8x_Nh3vkbwjf2ZliOhEhOHB3IcGQ',
-                  model: 'sdk_gphone64_arm64',
+                  // platform: 'android',
+                  // pushToken:
+                  //     'erSBsrPKSuSbazOD8BkRoe:APA91bEygGD3xElnRimDvJKZgeXtzT8TLMAWpNhL3vnf8-Db0bNLNxlJpWpq7iRKApLamllUr7bY9kriO0ARh1-lPEV8x_Nh3vkbwjf2ZliOhEhOHB3IcGQ',
+                  // model: 'sdk_gphone64_arm64',
                 ),
               );
             },

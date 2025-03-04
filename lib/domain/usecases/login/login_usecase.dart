@@ -8,16 +8,16 @@ class LoginUsecase {
   Future<User> login({
     required String id,
     required String mpin,
-    required String platform,
-    required String model,
-    required String pushToken,
+    // required String platform,
+    // required String model,
+    // required String pushToken,
   }) async {
     return await repository.login(
       id: id,
       mpin: mpin,
-      platform: platform,
-      model: model,
-      pushToken: pushToken,
+      // platform: platform,
+      // model: model,
+      // pushToken: pushToken,
     );
   }
 }
