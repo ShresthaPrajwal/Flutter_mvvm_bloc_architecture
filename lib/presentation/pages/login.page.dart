@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:moco_app/core/theme/app_colors.dart';
 import 'package:moco_app/presentation/blocs/login/login_bloc.dart';
 import 'package:moco_app/presentation/blocs/login/login_state.dart';
 import 'package:moco_app/presentation/widgets/background/background_widget.dart';
@@ -14,14 +15,13 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset:
-          false, 
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           const BackgroundWidget(),
           Column(
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 35),
               Image.asset(
                 'assets/images/moco_750.png',
                 height: 160,
@@ -31,10 +31,11 @@ class LoginPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(14.0),
                     child: Card(
+                      elevation: 0,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(16),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(20.0),
@@ -44,7 +45,7 @@ class LoginPage extends StatelessWidget {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                   content: Text(state.error),
-                                  backgroundColor: Colors.redAccent,
+                                  backgroundColor: AppColors.secondary,
                                 ),
                               );
                             }

@@ -82,6 +82,13 @@ flutter:
         - asset: assets/fonts/Montserrat.ttf
           weight: 700
 
+        - asset: assets/fonts/MontserratLight.ttf
+          weight: 300
+        - asset: assets/fonts/MontserratMedium.ttf
+          weight: 500
+        - asset: assets/fonts/MontserratBold.ttf
+          weight: 700
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

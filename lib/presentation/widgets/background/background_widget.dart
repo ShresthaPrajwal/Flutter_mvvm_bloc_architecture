@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moco_app/presentation/widgets/bezier_clipper.dart/bezier_clipper.dart';
+import 'package:moco_app/core/theme/app_colors.dart';
+import 'package:moco_app/core/utils/bezier_clipper.dart/bezier_clipper.dart';
 
 class BackgroundWidget extends StatelessWidget {
   const BackgroundWidget({super.key});
@@ -13,10 +14,7 @@ class BackgroundWidget extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [
-                Color.fromARGB(255, 219, 219, 219),
-                Color.fromARGB(255, 240, 240, 240),
-              ],
+              colors: [AppColors.background, AppColors.background],
               stops: [0.0, 1.0],
             ),
           ),
@@ -30,9 +28,7 @@ class BackgroundWidget extends StatelessWidget {
             child: Container(
               height: MediaQuery.of(context).size.height * 0.35,
               width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 28, 45, 73),
-              ),
+              decoration: const BoxDecoration(color: AppColors.primary),
             ),
           ),
         ),
