@@ -45,6 +45,7 @@ dependencies:
   flutter_native_splash: ^2.4.5
   device_info_plus: ^11.3.2
   geolocator: ^13.0.2
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,14 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/moco.png
+    - assets/images/moco_600.png
+    - assets/images/moco_750.png
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat.ttf
+          weight: 700
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -101,4 +110,4 @@ flutter:
 
 flutter_native_splash:
   color: "#FFFFFF"
-  image: assets/images/moco.png
+  image: assets/images/moco_600.png

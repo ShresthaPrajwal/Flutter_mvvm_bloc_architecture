@@ -17,19 +17,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LoginEvent {
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  String get mpin => throw _privateConstructorUsedError;
+  String get platform => throw _privateConstructorUsedError;
+  String get pushToken => throw _privateConstructorUsedError;
+  String get model => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) loginButtonPressed,
+    required TResult Function(
+      String id,
+      String mpin,
+      String platform,
+      String pushToken,
+      String model,
+    )
+    loginButtonPressed,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? loginButtonPressed,
+    TResult? Function(
+      String id,
+      String mpin,
+      String platform,
+      String pushToken,
+      String model,
+    )?
+    loginButtonPressed,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? loginButtonPressed,
+    TResult Function(
+      String id,
+      String mpin,
+      String platform,
+      String pushToken,
+      String model,
+    )?
+    loginButtonPressed,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,7 +84,13 @@ abstract class $LoginEventCopyWith<$Res> {
     $Res Function(LoginEvent) then,
   ) = _$LoginEventCopyWithImpl<$Res, LoginEvent>;
   @useResult
-  $Res call({String email, String password});
+  $Res call({
+    String id,
+    String mpin,
+    String platform,
+    String pushToken,
+    String model,
+  });
 }
 
 /// @nodoc
@@ -77,18 +107,39 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? password = null}) {
+  $Res call({
+    Object? id = null,
+    Object? mpin = null,
+    Object? platform = null,
+    Object? pushToken = null,
+    Object? model = null,
+  }) {
     return _then(
       _value.copyWith(
-            email:
-                null == email
-                    ? _value.email
-                    : email // ignore: cast_nullable_to_non_nullable
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
                         as String,
-            password:
-                null == password
-                    ? _value.password
-                    : password // ignore: cast_nullable_to_non_nullable
+            mpin:
+                null == mpin
+                    ? _value.mpin
+                    : mpin // ignore: cast_nullable_to_non_nullable
+                        as String,
+            platform:
+                null == platform
+                    ? _value.platform
+                    : platform // ignore: cast_nullable_to_non_nullable
+                        as String,
+            pushToken:
+                null == pushToken
+                    ? _value.pushToken
+                    : pushToken // ignore: cast_nullable_to_non_nullable
+                        as String,
+            model:
+                null == model
+                    ? _value.model
+                    : model // ignore: cast_nullable_to_non_nullable
                         as String,
           )
           as $Val,
@@ -105,7 +156,13 @@ abstract class _$$LoginButtonPressedImplCopyWith<$Res>
   ) = __$$LoginButtonPressedImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String password});
+  $Res call({
+    String id,
+    String mpin,
+    String platform,
+    String pushToken,
+    String model,
+  });
 }
 
 /// @nodoc
@@ -121,18 +178,39 @@ class __$$LoginButtonPressedImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? email = null, Object? password = null}) {
+  $Res call({
+    Object? id = null,
+    Object? mpin = null,
+    Object? platform = null,
+    Object? pushToken = null,
+    Object? model = null,
+  }) {
     return _then(
       _$LoginButtonPressedImpl(
-        email:
-            null == email
-                ? _value.email
-                : email // ignore: cast_nullable_to_non_nullable
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
                     as String,
-        password:
-            null == password
-                ? _value.password
-                : password // ignore: cast_nullable_to_non_nullable
+        mpin:
+            null == mpin
+                ? _value.mpin
+                : mpin // ignore: cast_nullable_to_non_nullable
+                    as String,
+        platform:
+            null == platform
+                ? _value.platform
+                : platform // ignore: cast_nullable_to_non_nullable
+                    as String,
+        pushToken:
+            null == pushToken
+                ? _value.pushToken
+                : pushToken // ignore: cast_nullable_to_non_nullable
+                    as String,
+        model:
+            null == model
+                ? _value.model
+                : model // ignore: cast_nullable_to_non_nullable
                     as String,
       ),
     );
@@ -142,16 +220,28 @@ class __$$LoginButtonPressedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoginButtonPressedImpl implements LoginButtonPressed {
-  const _$LoginButtonPressedImpl({required this.email, required this.password});
+  const _$LoginButtonPressedImpl({
+    required this.id,
+    required this.mpin,
+    required this.platform,
+    required this.pushToken,
+    required this.model,
+  });
 
   @override
-  final String email;
+  final String id;
   @override
-  final String password;
+  final String mpin;
+  @override
+  final String platform;
+  @override
+  final String pushToken;
+  @override
+  final String model;
 
   @override
   String toString() {
-    return 'LoginEvent.loginButtonPressed(email: $email, password: $password)';
+    return 'LoginEvent.loginButtonPressed(id: $id, mpin: $mpin, platform: $platform, pushToken: $pushToken, model: $model)';
   }
 
   @override
@@ -159,13 +249,18 @@ class _$LoginButtonPressedImpl implements LoginButtonPressed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginButtonPressedImpl &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.mpin, mpin) || other.mpin == mpin) &&
+            (identical(other.platform, platform) ||
+                other.platform == platform) &&
+            (identical(other.pushToken, pushToken) ||
+                other.pushToken == pushToken) &&
+            (identical(other.model, model) || other.model == model));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password);
+  int get hashCode =>
+      Object.hash(runtimeType, id, mpin, platform, pushToken, model);
 
   /// Create a copy of LoginEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -181,27 +276,48 @@ class _$LoginButtonPressedImpl implements LoginButtonPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password) loginButtonPressed,
+    required TResult Function(
+      String id,
+      String mpin,
+      String platform,
+      String pushToken,
+      String model,
+    )
+    loginButtonPressed,
   }) {
-    return loginButtonPressed(email, password);
+    return loginButtonPressed(id, mpin, platform, pushToken, model);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password)? loginButtonPressed,
+    TResult? Function(
+      String id,
+      String mpin,
+      String platform,
+      String pushToken,
+      String model,
+    )?
+    loginButtonPressed,
   }) {
-    return loginButtonPressed?.call(email, password);
+    return loginButtonPressed?.call(id, mpin, platform, pushToken, model);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password)? loginButtonPressed,
+    TResult Function(
+      String id,
+      String mpin,
+      String platform,
+      String pushToken,
+      String model,
+    )?
+    loginButtonPressed,
     required TResult orElse(),
   }) {
     if (loginButtonPressed != null) {
-      return loginButtonPressed(email, password);
+      return loginButtonPressed(id, mpin, platform, pushToken, model);
     }
     return orElse();
   }
@@ -237,14 +353,23 @@ class _$LoginButtonPressedImpl implements LoginButtonPressed {
 
 abstract class LoginButtonPressed implements LoginEvent {
   const factory LoginButtonPressed({
-    required final String email,
-    required final String password,
+    required final String id,
+    required final String mpin,
+    required final String platform,
+    required final String pushToken,
+    required final String model,
   }) = _$LoginButtonPressedImpl;
 
   @override
-  String get email;
+  String get id;
   @override
-  String get password;
+  String get mpin;
+  @override
+  String get platform;
+  @override
+  String get pushToken;
+  @override
+  String get model;
 
   /// Create a copy of LoginEvent
   /// with the given fields replaced by the non-null parameter values.

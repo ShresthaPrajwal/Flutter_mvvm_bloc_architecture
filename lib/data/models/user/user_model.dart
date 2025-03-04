@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:moco_app/domain/entities/user/user_model.dart';
+import 'package:moco_app/domain/entities/user/user_entities.dart';
 
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';

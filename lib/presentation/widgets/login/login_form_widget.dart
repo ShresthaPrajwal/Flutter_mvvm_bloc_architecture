@@ -19,12 +19,14 @@ class LoginForm extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          'Welcome To MOCO',
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 28, 45, 73),
+        Center(
+          child: const Text(
+            'Welcome To MOCO',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(255, 28, 45, 73),
+            ),
           ),
         ),
         const SizedBox(height: 20),
@@ -110,14 +112,18 @@ class LoginForm extends StatelessWidget {
                 28,
                 45,
                 73,
-              ).withOpacity(0.3),
+              ).withValues(alpha: 0.3),
               backgroundColor: const Color.fromARGB(255, 28, 45, 73),
             ),
             onPressed: () {
               context.read<LoginBloc>().add(
                 LoginButtonPressed(
-                  email: emailController.text,
-                  password: passwordController.text,
+                  id: emailController.text,
+                  mpin: passwordController.text,
+                  platform: 'android',
+                  pushToken:
+                      'erSBsrPKSuSbazOD8BkRoe:APA91bEygGD3xElnRimDvJKZgeXtzT8TLMAWpNhL3vnf8-Db0bNLNxlJpWpq7iRKApLamllUr7bY9kriO0ARh1-lPEV8x_Nh3vkbwjf2ZliOhEhOHB3IcGQ',
+                  model: 'sdk_gphone64_arm64',
                 ),
               );
             },

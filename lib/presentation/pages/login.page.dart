@@ -14,55 +14,62 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset:
+          false, 
       body: Stack(
         children: [
           const BackgroundWidget(),
-          Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Image.asset('assets/images/moco.png', height: 100, width: 100),
-                const SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Card(
-                    elevation: 8,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: BlocConsumer<LoginBloc, LoginState>(
-                        listener: (context, state) {
-                          if (state is LoginFailure) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(state.error),
-                                backgroundColor: Colors.redAccent,
-                              ),
+          Column(
+            children: [
+              const SizedBox(height: 50),
+              Image.asset(
+                'assets/images/moco_750.png',
+                height: 160,
+                width: 160,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: BlocConsumer<LoginBloc, LoginState>(
+                          listener: (context, state) {
+                            if (state is LoginFailure) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(state.error),
+                                  backgroundColor: Colors.redAccent,
+                                ),
+                              );
+                            }
+                          },
+                          builder: (context, state) {
+                            if (state is LoginLoading) {
+                              return const Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            }
+                            if (state is LoginSuccess) {
+                              return SuccessWidget(user: state.user);
+                            }
+                            return LoginForm(
+                              emailController: _emailController,
+                              passwordController: _passwordController,
                             );
-                          }
-                        },
-                        builder: (context, state) {
-                          if (state is LoginLoading) {
-                            return const Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          }
-                          if (state is LoginSuccess) {
-                            return SuccessWidget(user: state.user);
-                          }
-                          return LoginForm(
-                            emailController: _emailController,
-                            passwordController: _passwordController,
-                          );
-                        },
+                          },
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

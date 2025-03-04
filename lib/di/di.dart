@@ -28,7 +28,6 @@ void setupDependencies() {
   // BLoCs
   getIt.registerFactory<LoginBloc>(() => LoginBloc(getIt<LoginUsecase>()));
 
-
   /* To check weather the same instances above are used properly. */
 
   // print(

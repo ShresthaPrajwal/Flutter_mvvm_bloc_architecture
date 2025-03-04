@@ -29,7 +29,7 @@ class DioClient {
     String geolocation = await _getGeoLocation();
 
     return {
-      HeaderConstants.deviceIdHeader: deviceId ?? "",
+      HeaderConstants.deviceIdHeader: deviceId ?? '',
       HeaderConstants.geoLocationHeader: geolocation,
     };
   }
